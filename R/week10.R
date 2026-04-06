@@ -12,3 +12,10 @@ gss_tbl <- gss_tbl %>%
   select(where(~ mean(is.na(.)) < 0.75)) # Remove any columns where 75% or more participants have missing values
 
 # Visualization
+ggplot(gss_tbl, aes(x = mosthrs)) +
+  geom_histogram() +
+  labs(
+    title = "Distribution of Work Hours",
+    x = "Most Hours/Week Worked in Past Month",
+    y = "Count",
+  )
